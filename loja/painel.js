@@ -116,11 +116,19 @@ async function cadastrarProduto() {
     btnCadastrar.classList.add("btn-success");
   }
   
-  formProduto.reset();
+  limparFormulario();
   mostrarProdutos(produtos);
 }
 
 btnCadastrar.addEventListener("click", cadastrarProduto);
+
+function limparFormulario() {
+  nomeProduto.value = "";
+  descricaoProduto.value = "";
+  precoProduto.value = "";
+  categoriaProduto.value = "";
+  imagemProduto.value = "";
+}
 
 function editarProduto(id, nome, descricao,preco,categoria, imagem_url){
     produtoEditandoId = id;
@@ -159,3 +167,4 @@ async function excluirProduto(id) {
 
   carregarProdutos();
 }
+
